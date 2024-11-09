@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hoja estilo/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Londrina+Sketch&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel='icon' href="img/ico.png" type="image/x-icon">
+    <title>MITSBORN</title>
+</head>
+<body>
+        <div class="portada">
+            <h1>Mundo de Mistborn: Historias y Leyendas</h1>
+            <p>Bienvenido a nuestro rincón dedicado al fascinante mundo de Mistborn, la aclamada serie de Brandon Sanderson. Aquí exploraremos las épicas historias de resistencia, poder y esperanza que giran en torno a Vin, Kelsier y el oscuro Imperio Final. Acompáñanos en un viaje a través de los misterios de Luthadel, donde la magia de la alomancia y la lucha por la libertad se entrelazan en un relato inolvidable.</p>
+            <img src="img/brandon.jpg">
+        </div>
+
+        <!--INDICE PRINCIPAL-->
+        <div class="indiceZonas" id="indiceGeneral" style="display: none;">
+            <h1>INDICE</h1>
+            <div class="subIndiceZonas">
+                <nav>
+                    <ul>
+                        <li><a href="#Sootwarrens">Sootwarrens</a></li>
+                        <li><a href="#Blockstreet">Blockstreet</a></li>
+                        <li><a href="#Hotel District">Hotel District</a></li>
+                        <li><a href="#Comercial District">Comercial Distric</a></li>
+                        <li><a href="#Luthadel">Luthadel</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!--Sub Indice-->
+        <div class="container4" id="indice" style="display: none;">
+            <h1>PERSONAJES</h1>
+            <div class="sub-indice">
+                <nav>
+                    <a href="#kelsier">kelsier</a>
+                    <a href="#kolos">kolos</a>
+                    <a href="#kandras">kandras</a>
+                    <a href="#sazed">Sazed</a>
+                    <a href="#lordlegislador">Lord Legislador</a>
+                </nav>
+            </div>
+        </div>
+    
+        <!--Formulario-->
+        <div class="container5">
+            <form class="formulario">
+                <h1>Formulario</h1>
+                <input type="text" id="nombre" placeholder="Escribe la zona">
+                <input type="text" id="texto" placeholder="Valoracion">
+                <input type="button" value="Valora" onclick="valoracion();">
+            </form>
+        </div>
+
+        <div id="resultadoZona"></div>
+        <div id="resultadoValoracion"></div>
+
+    <script type="text/javascript">
+
+        //funcion de rollover de las zonas
+        function rollover1(){
+            document.getElementById('mapa').src='img/mapasotowarrens.jpg';
+        }
+
+        function rollover2(){
+            document.getElementById('mapa').src='img/mapahotel.jpg';
+        }
+
+        function rollover3(){
+            document.getElementById('mapa').src='img/mapacomercial.jpg';
+        }
+
+        function rollover4(){
+            document.getElementById('mapa').src='img/mapacentral.jpg';
+        }
+
+        function rollover5(){
+            document.getElementById('mapa').src='img/mapazonablook.jpg';
+        }
+
+        function mapa(){
+            document.getElementById('mapa').src='img/mapa.jpg';
+        }
+
+        //funcion del contenedor mostrar informacion zona 2
+        function mostrar(){
+            var informacion=document.getElementById('informacion'); 
+                if (informacion.style.display=='block') {
+                    informacion.style.display='none';
+
+                }else{
+                    informacion.style.display='block';
+                }  
+        }
+        //Mostrar lista 
+
+        function mostrarLista(){
+            var lista=document.getElementById('lista'); 
+                if (lista.style.display=='block') {
+                    lista.style.display='none';
+
+                }else{
+                    lista.style.display='block';
+                }  
+        }
+
+        //funcion mostrar secciones
+        function mostrarSecciones(){
+            var secciones =document.getElementById('secciones'); 
+            if(secciones.style.display=='block'){
+                secciones.style.display='none'; 
+            }else{
+                secciones.style.display='block';
+            }
+        }
+
+        //funcion para mostrar la tabla 
+        function mostrarTabla(){
+            var tabla=document.getElementById('tabla'); 
+                if (tabla.style.display=='block'){
+                    tabla.style.display='none';
+
+                }else{
+                    tabla.style.display='block';
+                }
+        }
+
+        //funcion para mostrar el subindice
+        function mostrarIndice(){
+            var indice=document.getElementById('indice'); 
+                if (indice.style.display=='block'){
+                    indice.style.display='none'; 
+                }else{
+                    indice.style.display='block';
+                }
+        }
+
+        //funcion para el indice general 
+        function mostrarIndicegeneral(){
+            var indiceGeneral= document.getElementById('indiceGeneral'); 
+            if (indiceGeneral.style.display=='block'){
+                indiceGeneral.style.display='none'; 
+            }else{
+                indiceGeneral.style.display='block';
+            }
+        }
+
+        //funcion para seleccionar la zona
+        function nombreZona1(){
+            document.getElementById('nombre').value='Blockstreet';
+        }
+        function nombreZona2(){
+            document.getElementById('nombre').value='Hotel District';
+        }
+        function nombreZona3(){
+            document.getElementById('nombre').value='Comercial District';
+        }
+        function nombreZona4(){
+            document.getElementById('nombre').value='Luthadel';
+        }
+        function nombreZona5(){
+            document.getElementById('nombre').value='Sootwarrens';
+        }
+
+        //FUNCION PARA EL FORMULARIO
+        function valoracion(){
+           var zona= document.getElementById('nombre').value; 
+           var val=document.getElementById('texto').value;
+            document.getElementById('resultadoZona').innerHTML= "<strong>"+zona+"</strong>";
+            document.getElementById('resultadoValoracion').innerHTML= "<em>"+val+"</em>";
+        }
+    </script> 
+
+
+    <!--COORDENADAS DEL MAPA-->
+    <img src="img/mapa.jpg" id="mapa" usemap="#image-map">
+    <map name="image-map">
+        <area target="_parent" id="Blockstreet" alt="Zona1" title="Blockstreet" href="#" coords="499,191,28" shape="circle" onmouseover="rollover1();" onmouseout="mapa();" onclick="mostrarIndice(); mostrarIndicegeneral();  mostrarLista(); mostrarSecciones(); nombreZona1(); nombreZona();">
+        <area target="_parent" id="HotelDistrict" alt="Zona2" title="Hotel District" href="#" coords="55,182,147,232" shape="rect" onclick="mostrar(); mostrarSecciones(); mostrarIndice(); mostrarIndicegeneral(); "onmouseover="rollover2(); "onmouseout="mapa(); nombreZona2();">
+        <area target="_parent" id="ComercialDistrict" alt="Zona3" title="Comercial District" href="#" coords="215,353,277,353,270,321,212,305,160,303,157,337" shape="poly" onmouseout="mapa();"onmouseover="rollover3();" onclick="mostrarTabla(); mostrarIndice(); mostrarIndicegeneral(); mostrarSecciones(); nombreZona3();">
+        <area target="_parent" id="Luthadel" alt="Zona4" title="Luthadel" href="#" coords="377,230,23" shape="circle" onmouseover="rollover4();" onmouseout="mapa();" onclick="mostrarIndice(); mostrarIndicegeneral(); mostrarSecciones(); nombreZona4();">
+        <area target="_parent" id="Sootwarrens" alt="Zona5" title="Sootwarrens" href="#" coords="451,135,472,94,401,88,376,119,410,141" shape="poly" onmouseout="mapa();" onmouseover="rollover5();" onclick= "mostrarIndice(); mostrarIndicegeneral(); mostrarSecciones(); nombreZona5();">
+    </map>
+
+    <!--CONTENEDOR CON INFORMACION (ZONA 2 HOTEL DISTRICT) -->
+    <div id="informacion" class="contenedor2" style="display: none;">
+        <h1>VIN</h1>
+        <p>Vin es la protagonista principal de la serie Mistborn de Brandon Sanderson. Su viaje es central en la narrativa, y su desarrollo a lo largo de la historia abarca temas de lucha, poder, identidad y redención</p>
+        <img src="img/vin.jpg">
+    </div>
+
+    <!--INFORMACION DE LA TABLA (ZONA 3 COMERCIAL DISTRICT)-->
+    <div id="tabla" class="contenedor3" style="display: none;"> 
+        <table border="1px">
+            <tr>
+                <th colspan="2">TABLA DE METALES ALOMANTICOS</th>
+            </tr>
+            <tr>
+                <td colspan="2"> Poder Físico</td>
+            </tr>
+            <tr>
+                <td>Tirar</td>
+                <td>Empujar</td>
+            </tr>
+            <tr>
+                <td>Hierro</td>
+                <td>Acero</td>
+            </tr>
+            <tr>
+                <td>Estaño</td>
+                <td>Peltre</td>
+            </tr>
+            <tr>
+                <td colspan="2"><img src="img/imagentabla.jpg"></td>
+            </tr>
+        </table>
+    </div>
+
+    <!--CONTENEDOR CON DATOS CURIOSOS EN FORMATO DE LISTA (ZONA 1 BLOOKSTREET)  -->
+    <div id="lista" class="lista" style="display: none;">
+        <h1>Datos curiosos</h1>
+        <ul>
+            <li>Sanderson es conocido por su atención al detalle en la construcción de mundos. En Mistborn, creó un mundo donde el paisaje y la vegetación están influenciados por la niebla y el cenizo, reflejando el ambiente oscuro y opresivo de la historia.</li>
+            <li>La serie Mistborn ha sido aclamada tanto por la crítica como por los lectores. Sanderson ha ganado varios premios, incluyendo el Hugo Award, y su trabajo ha tenido un impacto significativo en el género de fantasía moderna.</li>
+            <li>La Alomancia se basa en la ingestión y "quema" de metales. Cada metal proporciona diferentes poderes. Por ejemplo, el acero permite empujar objetos y el bronce permite detectar el uso de Alomancia en otros. Este sistema de magia es muy elaborado y ha sido muy bien recibido por su originalidad.</li>
+            <li>La historia está ambientada en un mundo de fantasía donde la mayoría de la población vive bajo un régimen opresivo del "Lord Legislador". Los protagonistas tienen la capacidad de utilizar metales para obtener habilidades mágicas, un sistema conocido como Alomancia.</li>
+        </ul>
+
+    </div>
+
+    <!--AQUI VAN TODAS LAS SECCIONES Y LAS DIFERENTES ZONAS DEL MAPA EXPLICANDOLAS QUE SE MOSTRARAN CUANDO HAGAS CLIC EN CUALQUIER ZONA-->
+    <div class="secciones" id="secciones" style="display: none;">
+        <div class="zona1">
+            <h1 id="Sootwarrens">Sootwarrens</h1>
+            <p>Sootwarrens es una de las áreas más notables de Luthadel en el universo de Mistborn de Brandon Sanderson. Es un distrito que representa la opresión y las duras condiciones de vida de los skaa, la clase baja del Imperio Final. Aquí hay algunos aspectos destacados sobre Sootwarrens:</p>
+            <img src="img/Sootwarrens.jpg">
+            <div class="listado">
+                <ol>
+                    <li>Condiciones de Vida: Sootwarrens es conocido por ser un lugar sombrío y miserable. Las calles están sucias y llenas de hollín, lo que da al área su nombre. Las condiciones de vida son extremadamente difíciles, con pobreza, violencia y enfermedades que afectan a los habitantes.</li>
+                    <li>Población Skaa: La mayoría de los residentes de Sootwarrens son skaa, que viven en un estado de constante opresión bajo el régimen del Lord Legislador. La falta de derechos y la explotación son comunes, lo que contribuye a un ambiente de desesperación y resistencia.</li>
+                    <li>Elementos de la Trama: Sootwarrens es un lugar donde se desarrollan eventos cruciales en la historia, incluidos encuentros entre personajes clave, como Vin y otros miembros de la resistencia. La atmósfera tensa y peligrosa del distrito refuerza la lucha de los skaa contra el sistema opresivo.</li>
+                    <li>Simbolismo: Este distrito simboliza la lucha de los oprimidos y la corrupción del sistema. A medida que la historia avanza, Sootwarrens se convierte en un punto de convergencia para la rebelión y el cambio, representando la esperanza de un futuro mejor a pesar de las adversidades.</li>
+                </ol>
+            </div>
+        </div>
+        <div class="zona2">
+            <h1 id="Blockstreet">Blockstreet</h1>
+            <p>Blockstreet es otro de los distritos de Luthadel en el universo de Mistborn de Brandon Sanderson. Este lugar, al igual que Sootwarrens, es representativo de las tensiones y desigualdades presentes en el Imperio Final. Aquí te dejo algunos puntos clave sobre Blockstreet:</p>
+            <img src="img/blockstret.jpg">
+                <ol class="listado">
+                    <li>Características del Distrito: Blockstreet es conocido por sus calles estrechas y laberínticas, donde los edificios están construidos de manera compacta y a menudo son altos. El ambiente es opresivo y, al igual que en otras partes de Luthadel, el hollín y la suciedad son comunes. Esto refleja el estado deteriorado de la ciudad y la vida de sus habitantes.</li>
+                    <li>Población: Aunque Blockstreet también alberga a una población de skaa, en este distrito viven tanto nobles como skaa, lo que crea un ambiente más complejo en términos de interacciones sociales. Sin embargo, la opresión y el miedo hacia el Lord Legislador son palpables, y la desconfianza entre las clases es común.</li>
+                    <li>Puntos de Encuentro: Blockstreet sirve como escenario para varios eventos clave en la historia, incluidos encuentros clandestinos entre skaa y nobles. Estos encuentros son cruciales para el desarrollo de la trama, ya que muestran la creciente resistencia contra el régimen opresor.</li>
+                    <li>Simbolismo y Temas: Blockstreet simboliza las divisiones sociales y las luchas de poder en Luthadel. Las interacciones en este distrito destacan los conflictos entre nobles y skaa, así como la lucha por la libertad y la igualdad. Es un reflejo de la complejidad del mundo creado por Sanderson, donde la revolución no es solo una lucha física, sino también una batalla de ideologías.</li>
+                </ol>
+        </div>
+
+        <div class="zona3">
+            <h1 id="Hotel District">Hotel District</h1>
+            <p>Hotel District es otro de los importantes distritos de Luthadel en el universo de Mistborn de Brandon Sanderson. Este distrito es notable por varias razones:</p>
+            <img src="img/hotel.jpg">
+                <ol>
+                    <li>Lujoso y Elegante: A diferencia de Sootwarrens y Blockstreet, el Hotel District está marcado por la opulencia y el lujo. Es un área donde se concentran los nobles y las clases altas del Imperio Final. Los hoteles, mansiones y salones de este distrito son lujosos y están decorados con esmero, reflejando el poder y la riqueza de sus residentes.</li>
+                    <li>Centro de la Vida Social: El Hotel District es un punto de encuentro clave para la elite noble. Aquí se llevan a cabo banquetes, fiestas y otros eventos sociales que son fundamentales para el establecimiento y el mantenimiento de alianzas políticas y matrimoniales entre las casas nobles.</li>
+                    <li>Contraste con los Distritos Pobres: La opulencia del Hotel District contrasta fuertemente con las condiciones miserables de los distritos skaa, como Sootwarrens. Este contraste subraya la desigualdad y la injusticia del sistema social del Imperio Final, donde la riqueza y el estatus están concentrados en unas pocas manos.</li>
+                    <li>Puntos de Encuentro Clave: A lo largo de la serie, el Hotel District es escenario de importantes interacciones y desarrollos de la trama. Personajes como Vin y Elend Venture se involucran en las dinámicas de poder y las intrigas que se desarrollan en este entorno, lo que es crucial para la evolución de la historia.</li>
+                </ol>
+        </div>
+        <div class="zona4">
+            <h1 id="Comercial District">Comercial District</h1>
+            <p>Comercial District es otro de los distritos clave en Luthadel dentro del universo de Mistborn de Brandon Sanderson. Este distrito desempeña un papel fundamental en la economía de la ciudad y refleja la dinámica entre las clases sociales del Imperio Final. Aquí hay algunos aspectos importantes sobre el Comercial District:</p>
+            <img src="img/comercial.jpg">
+            <ol>
+                <li>Centro Económico: Como su nombre indica, el Comercial District es el corazón del comercio en Luthadel. Aquí se encuentran numerosas tiendas, mercados y comerciantes que ofrecen productos y servicios a la población, tanto a nobles como a skaa. Este distrito es vital para la economía de la ciudad, ya que facilita el intercambio de bienes.</li>
+                <li>Diversidad de Comerciantes: En el Comercial District conviven diferentes tipos de comerciantes, desde aquellos que venden bienes lujosos y costosos para la nobleza hasta los que ofrecen productos más básicos para la clase trabajadora. Esta diversidad refleja la jerarquía social del Imperio, con los nobles disfrutando de productos exóticos y los skaa limitándose a lo esencial.</li>
+                <li>Interacciones Sociales: Este distrito sirve como un lugar de encuentro donde las diferentes clases pueden cruzarse. Las interacciones entre nobles y skaa son especialmente significativas, ya que revelan las tensiones y la desconfianza que existen entre las clases. Sin embargo, también proporciona un espacio donde se desarrollan relaciones y conspiraciones que impactan en la trama.</li>
+                <li>Eventos Clave: A lo largo de la serie, el Comercial District es escenario de eventos importantes. Las actividades comerciales no solo afectan la economía, sino que también influyen en la política y las intrigas sociales. Las decisiones tomadas aquí pueden tener repercusiones significativas en el curso de la historia.</li>
+            </ol>
+        </div>
+        <div class="zona5">
+            <h1 id="Luthadel">Luthadel</h1>
+            <p>Luthadel es la capital del Imperio Final en la serie Mistborn de Brandon Sanderson y juega un papel central en la trama. Aquí te dejo un resumen detallado de sus características, historia y relevancia en la serie:</p>
+            <img src="img/luthadel.jpg">
+                <ol>
+                    <li>Luthadel se caracteriza por su arquitectura sombría y monumental, construida principalmente con piedra y acero. Los edificios son a menudo grandes y de líneas duras, lo que refleja la opresión del régimen que gobierna la ciudad.</li>
+                    <li>El ambiente de Luthadel es gris y cubierto de hollín debido a la contaminación de la niebla que emana del Págano, el miasma que rodea la ciudad y que se considera un fenómeno natural asociado al poder del Lord Legislador.</li>
+                    <li>Esta disparidad social es un elemento central de la historia, impulsando la narrativa de resistencia y lucha por la libertad.</li>
+                    <li>La ciudad es un símbolo del régimen totalitario del Lord Legislador, donde la ley es inquebrantable y el disenso es castigado severamente.</li>
+                </ol>
+        </div>
+
+        <div class="personaje1">
+            <h1 id="kelsier">Kelsier</h1>
+            <p>Kelsier, conocido como "El Sobreviviente", es un ex-noble que se convierte en un líder de la resistencia contra el Lord Legislador y su opresivo régimen. A lo largo de la historia, es un personaje carismático y audaz, con una profunda convicción de que el pueblo skaa puede liberarse de su servidumbre.</p>
+            <img src="img/kesier.jpg">
+        </div>
+
+        <div class="personaje2">
+            <h1 id="kolos">Kolos</h1>
+            <p>Los Kolos son criaturas gigantes y brutales en el universo de Mistborn, creadas por el Lord Legislador a partir de los skaa. Con una altura de entre tres y cinco metros, tienen un aspecto grotesco y son conocidos por su fuerza descomunal y comportamiento agresivo. Aunque carecen de habilidades alománticas, son utilizados como soldados en el Imperio Final. Su existencia simboliza la opresión y el control del régimen, y representan los extremos a los que llega el poder para mantener su dominio. Su presencia en la historia refuerza los temas de lucha y resistencia contra la tiranía.</p>
+            <img src="img/kolos.jpg">
+        </div>
+        <div class="personaje3">
+            <h1 id="kandras">Kandras</h1>
+            <p>
+                Los Kandras son criaturas en el universo de Mistborn que pueden cambiar de forma al consumir el cadáver de una persona. Tienen habilidades alománticas limitadas y siguen un estricto código moral. Su capacidad de infiltración los convierte en personajes clave en las intrigas políticas del Imperio Final.</p>
+            <img src="img/kandras.jpg">
+        </div>
+        <div class="personaje4">
+            <h1 id="sazed">Sazed</h1>
+            <p>Sazed es un personaje clave en Mistborn, un Terris con la habilidad de usar alomancia y feruquía. Como erudito, posee un vasto conocimiento sobre la historia y las religiones del mundo. Su lealtad a la causa de la resistencia lo lleva a unirse a Vin y Kelsier en su lucha contra el Lord Legislador. A lo largo de la serie, Sazed enfrenta dilemas morales y busca su propio propósito, convirtiéndose en un pilar de apoyo para los protagonistas.</p>
+            <img src="img/sazed.jpg">
+        </div>
+        <div class="personaje5">
+            <h1 id="lordlegislador">Lord Legislador</h1>
+            <p>El Lord Legislador es el tirano inmortal que gobierna el Imperio Final en Mistborn. Considerado una figura casi divina, utiliza su poder alomántico y su control sobre los Kolos y otros seres para oprimir a los skaa. Su régimen es brutal y totalitario, y su figura simboliza la corrupción y la opresión. A lo largo de la serie, su verdadera naturaleza y los secretos de su poder se revelan, influyendo en la lucha por la libertad de los oprimidos.</p>
+            <img src="img/lod legislador.jpg">
+        </div>
+    </div>
+</body> 
+</html>
